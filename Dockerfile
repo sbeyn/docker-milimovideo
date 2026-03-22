@@ -40,17 +40,15 @@ RUN mkdir -p /usr/local/nvm \
   && ln -s /usr/local/nvm/versions/node/v24.14.0/bin/* /usr/bin/
 
 # Installation and backend setup
+COPY files/requirements.txt /usr/share/milimovideo/requirements.txt
 RUN cd /usr/share \
   && git clone https://github.com/mainza-ai/milimovideo.git \
   && cd milimovideo \
-  && python3 -m venv milimov \
-  && ./milimov/bin/pip install -e ./LTX-2/packages/ltx-core \
-  && ./milimov/bin/pip install -e ./LTX-2/packages/ltx-pipelines \
-  && ./milimov/bin/pip install -e ./flux2 \
-  && ./milimov/bin/pip install -r backend/requirements.txt \
-  && python3 -m venv sam3_env \
-  && ./sam3_env/bin/pip install -e sam3 \
-  && ./sam3_env/bin/pip install fastapi uvicorn python-multipart psutil pycocotools huggingface_hub \
+  && pip install -r requirements.txt \
+  && pip install -e ./LTX-2/packages/ltx-core \
+  && pip install -e ./LTX-2/packages/ltx-pipelines \
+  && pip install -e ./flux2 \
+  && pip install -e sam3 \
   && chown -R milimo:milimo -R /usr/share/milimovideo 
 
 # Override configuration to allow access without in localhost
