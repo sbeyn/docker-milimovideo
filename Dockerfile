@@ -52,8 +52,11 @@ RUN cd /usr/share \
   && ./sam3_env/bin/pip install -e sam3 \
   && ./sam3_env/bin/pip install fastapi uvicorn python-multipart psutil pycocotools huggingface_hub \
   && chown -R milimo:milimo -R /usr/share/milimovideo 
+
+# Override configuration to allow access without in localhost
+COPY files/vite.config.ts /usr/share/milimovideo/web-app/vite.config.ts
  
-# Supervisord related for Tentacle
+# Supervisord related for Services
 COPY files/run_sam.sh /usr/share/milimovideo/run_sam.sh
 COPY files/run_frontend.sh /usr/share/milimovideo/run_frontend.sh
 COPY files/supervisord.conf /etc/supervisord.conf
