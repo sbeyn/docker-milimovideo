@@ -42,13 +42,13 @@ RUN mkdir -p /usr/local/nvm \
 # Installation and backend setup
 RUN cd /usr/share \
   && git clone https://github.com/mainza-ai/milimovideo.git
-COPY files/requirements.txt /usr/share/milimovideo/requirements.txt
+COPY files/requirements-${TARGETARCH}.txt /usr/share/milimovideo/requirements.txt
 RUN cd /usr/share/milimovideo \
-  && pip install -r requirements.txt \
   && pip install -e ./LTX-2/packages/ltx-core \
   && pip install -e ./LTX-2/packages/ltx-pipelines \
   && pip install -e ./flux2 \
   && pip install -e sam3 \
+  && pip install -r requirements.txt \
   && chown -R milimo:milimo -R /usr/share/milimovideo 
 
 # Override configuration to allow access without in localhost

@@ -1,0 +1,28 @@
+fastapi 
+uvicorn
+python-multipart
+pycocotools
+huggingface_hub
+cupy @ file:///opt/cupy-13.0.0rc1-cp310-cp310-linux_aarch64.whl#sha256=43874022438314d2a4fd97398303592b9a8356facffd91f594f25a554bd9162e
+onnx @ git+https://github.com/onnx/onnx@6fa70c5f1d17f75ac9b015e8fad168a1a481bd23
+onnxruntime-gpu @ file:///opt/onnxruntime_gpu-1.16.3-cp310-cp310-linux_aarch64.whl#sha256=c722561625c0d2bffc1e893241d50118cdf7b4e5c788e7360a15905db5e5b514
+protobuf @ file:///opt/protobuf-3.20.3-cp310-cp310-linux_aarch64.whl#sha256=08b65f689f6b4fc32e9741b44e254f979bd75f892b4330a2fc0d6a7f75842149
+pycuda @ file:///opt/pycuda-2023.1-cp310-cp310-linux_aarch64.whl#sha256=346a7026a8a2bb725dfd8caca3d8b639de457a4eccffbcf07a5ed959c3200491
+tensorboard-data-server==0.7.2
+tensorflow @ file:///tensorflow-2.14.0%2Bnv23.11-cp310-cp310-linux_aarch64.whl#sha256=45fe73da2c2795aa28f784eec8b1e3e23e74b5cfc0fa26291b084771e6463b50
+torch @ file:///opt/torch-2.1.0-cp310-cp310-linux_aarch64.whl#sha256=00d3e845256e995ec25bffe60d4b832d9fa943ceec779c75b8fc5f36387d27b6
+torchaudio @ file:///opt/torchaudio-2.1.0%2B6ea1133-cp310-cp310-linux_aarch64.whl#sha256=7b2c05783c5950bb3f610a1076e1e076ccda41fb9d76bf61386464992c6d8f9e
+torchvision @ file:///opt/torchvision-0.16.0%2Bfbb4cc5-cp310-cp310-linux_aarch64.whl#sha256=48afcfbf0cb5797aebee3fc9dc67c0b1c5e374ff1a07d27de68b68c331e6da31
+psutil==5.9.6
+numpy==1.26.1
+Pillow
+einops
+transformers
+safetensors
+accelerate
+fire
+sentencepiece
+diffusers
+scikit-image
+sqlmodel
+sse-starlette
