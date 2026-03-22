@@ -1,7 +1,7 @@
 # Default from amd64
 ARG TARGETARCH=amd64
 FROM --platform=linux/amd64 ubuntu:22.04 AS base-amd64
-FROM --platform=linux/arm64 nvidia/cuda:12.6.0-runtime-ubuntu22.04 AS base-arm64
+FROM --platform=linux/arm64 nvcr.io/nvidia/l4t-ml:r36.2.0-py3 AS base-arm64
 FROM base-${TARGETARCH} AS final
 
 # Default versions of tools
