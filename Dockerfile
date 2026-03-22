@@ -40,10 +40,10 @@ RUN mkdir -p /usr/local/nvm \
   && ln -s /usr/local/nvm/versions/node/v24.14.0/bin/* /usr/bin/
 
 # Installation and backend setup
-COPY files/requirements.txt /usr/share/milimovideo/requirements.txt
 RUN cd /usr/share \
-  && git clone https://github.com/mainza-ai/milimovideo.git \
-  && cd milimovideo \
+  && git clone https://github.com/mainza-ai/milimovideo.git
+COPY files/requirements.txt /usr/share/milimovideo/requirements.txt
+RUN cd /usr/share/milimovideo \
   && pip install -r requirements.txt \
   && pip install -e ./LTX-2/packages/ltx-core \
   && pip install -e ./LTX-2/packages/ltx-pipelines \
