@@ -8,10 +8,12 @@ FROM base-${TARGETARCH} AS final
 ARG SERVER_HOST="localhost"
 ARG NVM_VERSION=0.40.4
 ARG NODE_VERSION=24.14.0
+ARG TARGETARCH=amd64
 
 ENV SERVER_HOST="localhost"
 ENV NVM_VERSION=0.40.4
 ENV NODE_VERSION=24.14.0
+ENV TARGETARCH=amd64
 
 # Set BASH_ENV
 ENV BASH_ENV "/etc/profile"
@@ -42,7 +44,9 @@ RUN mkdir -p /usr/local/nvm \
 # Installation and backend setup
 RUN cd /usr/share \
   && git clone https://github.com/mainza-ai/milimovideo.git
-COPY files/requirements-${TARGETARCH}.txt /usr/share/milimovideo/requirements.txt
+
+COPY "files/requirements-${TARGETARCH}.txt" /usr/share/milimovideo/requirements.txt
+
 RUN cd /usr/share/milimovideo \
   && pip install -e ./LTX-2/packages/ltx-core \
   && pip install -e ./LTX-2/packages/ltx-pipelines \
